@@ -15,25 +15,115 @@
     <title>Weather Dashboard</title>
   </head>
   <body>
+    <!-- Header -->
     <header><h1>Weather Dashboard</h1></header>
-    <div class="container">
+    <!-- Container for Search Column (Left) and Results Column (Right) -->
+    <main class="container">
       <div class="row">
-        <div class="col">CITY SEARCH
-            <form>
-                <div class="mb-3">
-                  <label for="citySearch" class="form-label">Search for a City:</label>
-                  <input type="email" class="form-control" id="citySearch" aria-describedby="citySearch">
-                  <div id="citySearchHelp" class="form-text">Please enter the name of a city.</div>
-                </div>
-                  <div class="d-grid">
-                    <button class="btn btn-primary" type="button">Submit</button>
-                  </div>
-              </form>
-
-        </div>
-        <div class="col-9">WEATHER CONDITIONS</div>
+        <!-- Search Section (Left) -->
+        <section class="col">
+          CITY SEARCH
+          <!-- Search Form -->
+          <form>
+            <div class="mb-3">
+              <label for="citySearch" class="form-label"
+                >Search for a City:</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="citySearch"
+                aria-describedby="citySearch"
+              />
+              <div id="citySearchHelp" class="form-text">
+                Please enter the name of a city.
+              </div>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-primary" type="button">Submit</button>
+            </div>
+          </form>
+          <!-- Horizontal line -->
+          <hr />
+          <!-- Saved Results -->
+          <div class="card text-center">
+            <div class="d-grid">
+              <button class="btn btn-primary" type="button">Last City</button>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-primary" type="button">City 2</button>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-primary" type="button">City 3</button>
+            </div>
+            <div class="d-grid">
+              <button class="btn btn-primary" type="button">City 4</button>
+            </div>
+          </div>
+        </section>
+        <!-- Results Section (Right)-->
+        <section class="col-9">
+          WEATHER CONDITIONS
+          <!-- Current Conditions (Big Card) -->
+          <div class="card text-bg-light mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">City Name</h5>
+              <p class="card-text">Conditions</p>
+            </div>
+          </div>
+          <!-- 5 Day forecast (Card container for small cards) -->
+          <h2>5 Day Forecast:</h2>
+          <div class="card-group">
+            <div class="card border-info mb-3" style="max-width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Date</h5>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+              </div>
+            </div>
+            <div class="card border-info mb-3" style="max-width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Date</h5>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+              </div>
+            </div>
+            <div class="card border-info mb-3" style="max-width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Date</h5>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+              </div>
+            </div>
+            <div class="card border-info mb-3" style="max-width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Date</h5>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+              </div>
+            </div>
+            <div class="card border-info mb-3" style="max-width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Date</h5>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+                <p class="card-text">Conditions</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
+    </main>
     <!-- JQuery -->
     <script
       src="https://code.jquery.com/jquery-3.6.2.min.js"
