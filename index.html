@@ -24,23 +24,23 @@
         <section class="col">
           CITY SEARCH
           <!-- Search Form -->
-          <form>
+          <form id="searchForm">
             <div class="mb-3">
               <label for="citySearch" class="form-label"
                 >Search for a City:</label
               >
               <input
-                type="email"
+              id = "searchFormInput"  
+              type="search"
                 class="form-control"
-                id="citySearch"
                 aria-describedby="citySearch"
-              />
-              <div id="citySearchHelp" class="form-text">
+                required />
+              <div class="form-text">
                 Please enter the name of a city.
               </div>
             </div>
             <div class="d-grid">
-              <button class="btn btn-primary" type="button">Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </form>
           <!-- Horizontal line -->
