@@ -18,6 +18,7 @@ function geoCoding(searchInput) {
     .then((response) => response.json())
     .then(function (data) {
       // lat and lon for Current Weather API
+      // TO DO - You can make this into one geoCoding Obj with each thing as a property
       const lat = data[0].lat;
       const lon = data[0].lon;
       const cityName = data[0].name;
@@ -35,6 +36,21 @@ function geoCoding(searchInput) {
           "/" +
           lon
       );
+      // Variable for Current Weather API URL
+
+      const currentWeatherURL =
+        "https://api.openweathermap.org/data/2.5/weather?lat=" +
+        lat +
+        "&lon=" +
+        lon +
+        "&appid=1818fcd056aa18519062741f9933b26b";
+      // Fetch for Current Weather
+      fetch(currentWeatherURL)
+        .then((response) => response.json())
+        .then(function (data) {
+          console.log(data);
+          // TO DO create and pass necessary variables into a function that you can define outside of the promise (for readibility)
+        });
     });
 }
 
