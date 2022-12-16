@@ -22,7 +22,6 @@
       <div class="row">
         <!-- Search Section (Left) -->
         <section class="col">
-          CITY SEARCH
           <!-- Search Form -->
           <form id="searchForm">
             <div class="mb-3">
@@ -30,17 +29,16 @@
                 >Search for a City:</label
               >
               <input
-              id = "searchFormInput"  
-              type="search"
+                id="searchFormInput"
+                type="search"
                 class="form-control"
                 aria-describedby="citySearch"
-                required />
-              <div class="form-text">
-                Please enter the name of a city.
-              </div>
+                required
+              />
+              <div class="form-text">Please enter the name of a city.</div>
             </div>
             <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </div>
           </form>
           <!-- Horizontal line -->
@@ -63,13 +61,17 @@
         </section>
         <!-- Results Section (Right)-->
         <section class="col-9">
-          WEATHER CONDITIONS
           <!-- Current Conditions (Big Card) -->
           <div class="card text-bg-light mb-3">
-            <div class="card-header">Header</div>
             <div class="card-body">
-              <h5 class="card-title">City Name</h5>
-              <p class="card-text">Conditions</p>
+              <h2 class="card-title">
+                <span id="currentCity">City Name</span>
+                <span id="currentDate">(M/DD/YYYY)</span
+                ><span id="currentIcon"></span>
+              </h2>
+              <p class="card-text">Temp: <span id="currentTemp"></span></p>
+              <p class="card-text">Wind: <span id="currentWind"></span></p>
+              <p class="card-text">Humidity: <span id="currentHumid"></span></p>
             </div>
           </div>
           <!-- 5 Day forecast (Card container for small cards) -->
@@ -136,6 +138,9 @@
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <!-- Day.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
+
     <script src="./assets/script.js"></script>
   </body>
 </html>

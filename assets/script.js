@@ -1,3 +1,6 @@
+let now = dayjs().format("M/D/YYYY");
+console.log(now);
+
 // Search for City event listener to get user value
 $("#searchForm").submit(function () {
   event.preventDefault();
@@ -49,7 +52,7 @@ function geoCoding(searchInput) {
         .then((response) => response.json())
         .then(function (data) {
           console.log(data);
-          // TO DO create and pass necessary variables into a function that you can define outside of the promise (for readibility)
+          // TO DO create and pass necessary variables into jquery create/set/append
         });
     });
 }
