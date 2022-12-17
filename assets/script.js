@@ -183,12 +183,14 @@ function displayCity() {
   cityList = JSON.parse(localStorage.getItem("city"));
   console.log(cityList);
   // for each create a button in the searched items list
-  cityList.forEach((element) => {
-    const newBtn = `<div class="d-grid">
-<button class="btn btn-primary" type="button">${element}</button>
-</div>`;
-    $("#citySearchList").append(newBtn);
-  });
+ if (cityList) {
+    cityList.forEach((element) => {
+        const newBtn = `<div class="d-grid">
+    <button class="btn btn-primary" type="button">${element}</button>
+    </div>`;
+        $("#citySearchList").append(newBtn);
+      });
+ } else cityList =[];
 }
 
 // -- CLEAR FORM --
@@ -204,6 +206,8 @@ function clearForm() {
 function clearList() {
     $("#citySearchList").html("");
 localStorage.clear();
+cityList = [];
+
 }
 
 // Initialize displayCity on page load
