@@ -28,6 +28,14 @@ $("#citySearchList")
     storeCity(userInput);
   });
 
+
+  // Clear list button
+
+  $("#clearBtn").click( function () {
+    clearList();
+    clearForm();
+  })
+
 // -- WEATHER FETCHES --
 
 /* Get weather function to:
@@ -189,6 +197,13 @@ function displayCity() {
 function clearForm() {
   // Search for a city input
   $("#searchFormInput").val("");
+}
+
+// -- CLEAR CITY LIST --
+
+function clearList() {
+    $("#citySearchList").html("");
+localStorage.clear();
 }
 
 // Initialize displayCity on page load
