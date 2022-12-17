@@ -5,7 +5,9 @@ console.log(now);
 // City list local storage
 let cityList = [];
 
-// CLICK - Search for City event listener to get user value
+// -- CLICK EVENT LISTENER --
+
+// Submit Form
 $("#searchForm").submit(function () {
   event.preventDefault();
   const userInput = $("#searchFormInput").val();
@@ -15,9 +17,22 @@ $("#searchForm").submit(function () {
   clearForm();
 });
 
-// Get weather function to:
-// Fetch geocoding to get lat/lon from city name
-// Then fetch current and five day weather conditions using lat/lon
+// Saved City buttons
+
+$("#citySearchList")
+  .on("click", "button", function (event) {
+    console.log("click");
+    const userInput = $(this).text();
+    console.log(userInput);
+    getWeather(userInput);
+    storeCity(userInput);
+  });
+
+// -- WEATHER FETCHES --
+
+/* Get weather function to:
+    Fetch geocoding to get lat/lon from city name
+        Then fetch current and five day weather conditions using lat/lon */
 function getWeather(searchInput) {
   // Fetch geocoding lat/lon data
   const geoCodingURL =
@@ -82,6 +97,8 @@ function getWeather(searchInput) {
     });
 }
 
+// -- WEATHER TO HTML FUNCTIONS --
+
 // Current weather conditions function
 function currentWeather(data) {
   // Variables to set text
@@ -141,26 +158,37 @@ function fiveDay(data) {
   }
 }
 
-// Function to clear any form text after entry
-function clearForm() {
-  // Search for a city input
-  $("#searchFormInput").val("");
-}
+// -- LOCAL STORAGE GET/SET --
 
-// Local storage setItem
+// setItem with user input city name
 
 function storeCity(userInput) {
-  let cityList = cityList.unshift(userInput);
- JSON.stringify(localStorage.setItem("city", cityList));
+  cityList.unshift(userInput);
+  localStorage.setItem("city", JSON.stringify(cityList));
   displayCity();
 }
 
 // Local storage getItem and display
 
 function displayCity() {
-  let cityList = JSON.parse(localStorage.getItem("city"));
+  $("#citySearchList").html("");
+  cityList = JSON.parse(localStorage.getItem("city"));
   console.log(cityList);
   // for each create a button in the searched items list
+  cityList.forEach((element) => {
+    const newBtn = `<div class="d-grid">
+<button class="btn btn-primary" type="button">${element}</button>
+</div>`;
+    $("#citySearchList").append(newBtn);
+  });
+}
+
+// -- CLEAR FORM --
+
+// Function to clear any form text after entry
+function clearForm() {
+  // Search for a city input
+  $("#searchFormInput").val("");
 }
 
 // Initialize displayCity on page load
